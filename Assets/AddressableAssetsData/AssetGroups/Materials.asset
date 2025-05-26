@@ -10,32 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: Materials
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
-  m_GUID: e614eac5ae38f469ba4248f15b8e6f01
+  m_GroupName: Materials
+  m_GUID: 870d9fedff7b245bc928db900d700749
   m_SerializeEntries:
-  - m_GUID: 11c42e0ee9c3b4770af3e9c234613686
-    m_Address: Assets/Addressables Test/Prefabs/Addressables Sphere.prefab
+  - m_GUID: 7f7d8aaafc8c040dfa78804e34a093b3
+    m_Address: Assets/Addressables Test/Material/White.mat
     m_ReadOnly: 0
     m_SerializedLabels:
-    - default
+    - Mat
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 633e6b0e45170404e9511a0db308e6ef
-    m_Address: Assets/Addressables Test/Prefabs/Addressables Capsule.prefab
+  - m_GUID: d1f0c5f11282948e18375cb828e76946
+    m_Address: Assets/Addressables Test/Material/Yellow.mat
     m_ReadOnly: 0
     m_SerializedLabels:
-    - default
+    - Mat
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 93d9c65bb2e3949b0b741a636ba4c5d1
-    m_Address: Assets/Addressables Test/Prefabs/Addressables Cube.prefab
+  - m_GUID: f15f26527f0ff42518bcceba87f8112f
+    m_Address: Assets/Addressables Test/Material/Red.mat
     m_ReadOnly: 0
     m_SerializedLabels:
-    - default
+    - Mat
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 977eff8e6fb3444bc839799bd482260e, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: ff32c704fff9c456497cdaa06c1be027, type: 2}
-    - {fileID: 11400000, guid: 2b70b732cc18443b28f1828103eb4073, type: 2}
+    - {fileID: 11400000, guid: 0742f8e0c2a474010ab2394506c47368, type: 2}
+    - {fileID: 11400000, guid: c1a241c993a6044dea4dad8fbe4f85b1, type: 2}
