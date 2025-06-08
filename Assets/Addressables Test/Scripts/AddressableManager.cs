@@ -53,9 +53,6 @@ public class AddressableManager : MonoBehaviour
             return;
         }
 
-        // coinSprite.ReleaseAsset();
-        // image.sprite = null;
-
         for (int i = gameObjs.Count - 1; i >= 0; i--)
         {
             Addressables.ReleaseInstance(gameObjs[i]);
