@@ -60,6 +60,7 @@ public class AddressableManager : MonoBehaviour
         }
 
         // 리스트를 역순으로 순회하며 Addressables.ReleaseInstance로 해제
+        // 역순으로 제거: 뒤에서부터 제거하므로, 리스트 크기가 줄어도 인덱스가 꼬이지 않는다.
         for (int i = gameObjs.Count - 1; i >= 0; i--)
         {
             Addressables.ReleaseInstance(gameObjs[i]);
