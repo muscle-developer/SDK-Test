@@ -5,6 +5,7 @@ using UnityEngine.AddressableAssets;   // 어드레서블을 사용하기 위한
 
 public class AddressableManager : MonoBehaviour
 {
+    // Addressable로 관리되는 Capsule, Cube, Sphere 프리팹에 대한 참조
     [SerializeField]
     private AssetReferenceGameObject capsuleObj;
     [SerializeField]
@@ -20,43 +21,49 @@ public class AddressableManager : MonoBehaviour
         StartCoroutine(InitAddressable());
     }
 
+    // Addressables 초기화 코루틴
     private IEnumerator InitAddressable()
     {
-        var init = Addressables.InitializeAsync();
-        yield return init;
+        var init = Addressables.InitializeAsync(); // 비동기 초기화
+        yield return init; // 초기화 완료될 때까지 대기
     }
 
-    // Load
+    // 버튼 클릭 시 오브젝트를 Addressables에서 인스턴스화
     public void ButtonSpawnObject() 
     {
+        // Capsule 오브젝트 인스턴스화
         capsuleObj.InstantiateAsync().Completed += (obj) =>
         {
-            gameObjs.Add(obj.Result);
+            gameObjs.Add(obj.Result); // 인스턴스화된 오브젝트를 리스트에 저장
         };
 
+        // Cube 오브젝트 인스턴스화
         cubeObj.InstantiateAsync().Completed += (obj) =>
         {
             gameObjs.Add(obj.Result);
         };
 
+        // Sphere 오브젝트 인스턴스화
         sphereObj.InstantiateAsync().Completed += (obj) =>
         {
             gameObjs.Add(obj.Result);
         };
     }
-    
-    // Release
+
+    // 버튼 클릭 시 인스턴스화된 오브젝트 해제
     public void ButtonReleaseObject()
     {
+        // 생성된 오브젝트가 없으면 리턴
         if (gameObjs.Count == 0)
         {
             return;
         }
 
+        // 리스트를 역순으로 순회하며 Addressables.ReleaseInstance로 해제
         for (int i = gameObjs.Count - 1; i >= 0; i--)
         {
             Addressables.ReleaseInstance(gameObjs[i]);
-            gameObjs.RemoveAt(i);
+            gameObjs.RemoveAt(i); // 리스트에서 제거
         }
     }
 }
