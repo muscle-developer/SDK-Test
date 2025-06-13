@@ -33,6 +33,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - default
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e65dbc3a770554792b28dad6b8607475
+    m_Address: Assets/Addressables Test/Prefabs/Addressables Capsule Build Test.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 977eff8e6fb3444bc839799bd482260e, type: 2}
   m_SchemaSet:
