@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;   // 어드레서블을 사용하기 위한 네임스페이스
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class AddressableManager : MonoBehaviour
 {
@@ -66,5 +67,39 @@ public class AddressableManager : MonoBehaviour
             Addressables.ReleaseInstance(gameObjs[i]);
             gameObjs.RemoveAt(i); // 리스트에서 제거
         }
+    }
+}
+
+// 코드로 어드레서블 로드하기
+public class LoadExample : MonoBehaviour
+{
+    public string prefabAddress = "MyPreFab";
+    // 클래스 멤버 변수로 handle 저장
+    private AsyncOperationHandle<GameObject> handle;
+
+    void Start()
+    {
+        // 비동기로 로드
+        handle = Addressables.LoadAssetAsync<GameObject>(prefabAddress);
+        handle.Completed += OnPrefabLoaded;
+    }
+
+    private void OnPrefabLoaded(AsyncOperationHandle<GameObject> completedHandle)
+    {
+        if (completedHandle.Status == AsyncOperationStatus.Succeeded)
+        {
+            GameObject prefab = completedHandle.Result;
+            Instantiate(prefab); // 인스턴스화
+        }
+        else
+        {
+            Debug.LogError("Failed to load addressable prefab.");
+        }
+    }
+
+    private void OnRelese()
+    {
+        // 메모리에서 해제 (사용 후)
+        Addressables.Release(handle);
     }
 }
