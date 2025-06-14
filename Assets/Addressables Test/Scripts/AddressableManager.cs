@@ -102,4 +102,10 @@ public class LoadExample : MonoBehaviour
         // 메모리에서 해제 (사용 후)
         Addressables.Release(handle);
     }
+
+    // 객체가 파괴될 때 Relese 진행
+    private void OnDestroy()
+    {
+        OnRelese();
+    }
 }
