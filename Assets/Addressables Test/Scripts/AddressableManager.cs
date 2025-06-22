@@ -73,7 +73,7 @@ public class AddressableManager : MonoBehaviour
 // 코드로 어드레서블 로드하기
 public class LoadExample : MonoBehaviour
 {
-    public string prefabAddress = "MyPreFab";
+    public string prefabAddress = "Addressables Capsule Build Test";
     // 클래스 멤버 변수로 handle 저장
     private AsyncOperationHandle<GameObject> handle;
 
