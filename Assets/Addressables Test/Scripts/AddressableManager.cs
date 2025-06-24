@@ -93,7 +93,7 @@ public class LoadExample : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Failed to load addressable prefab.");
+            Debug.LogError("프리팹을 불러오는데 실패했습니다.");
         }
     }
 
